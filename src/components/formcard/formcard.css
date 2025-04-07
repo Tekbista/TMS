@@ -1,0 +1,96 @@
+.container{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+.row{
+    align-self: center;
+    width: 600px;
+    min-height: 300px;
+    margin-top: 50px;
+    box-shadow: 5px 5px 15px #101010;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.welcome{
+    background-color: #0d6efd;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #ffffff;
+    align-content: center;
+    text-align: center;
+}
+
+
+.round-btn:hover{
+    background-color: #3a3636;
+}
+
+.form-content{
+    align-content: center;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.form-control{
+    border-radius: 25px !important;
+    padding-left: 20px !important;
+}
+.form-title{
+    text-align: center;
+}
+.btn{
+    border-radius: 25px !important;
+    width: 100%;
+    float: right;
+}
+
+@keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 8ch;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .typing-title {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #0d6efd; /* Cursor effect */
+    width: 0;
+    animation: typing 2s steps(20, end) infinite alternate, blink 0.7s infinite;
+  }
+
+  @keyframes diagonal-bg {
+    0% {
+      background-size: 0% 0%;
+      background-position: 0% 100%;
+    }
+    100% {
+      background-size: 100% 100%;
+      background-position: 100% 0%;
+    }
+  }
+  
+  .animated-button {
+    padding: 5px 20px 5px 20px;
+    border: 1px solid white;
+    color: white;
+    background: none; /* No background initially */
+    border-radius: 50px;
+    text-decoration: none;
+  }
+  
+  
