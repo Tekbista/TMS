@@ -1,21 +1,22 @@
 import { Form, FormControl, Button} from "react-bootstrap";
-import './formcard.module.css'
+import styles from './formcard.module.css'
+import classNames from "classnames";
 
 function FormCard({inputs, onSubmit, onChange, values, errors, onBlur, message}){
 
     return(
-        <div className="container mt-5 container d-flex justify-content-center align-items-center">
-            <div className="formcard">
+        <div className={classNames(styles['container'], 'mt-5 container d-flex justify-content-center align-items-center')} >
+            <div className={classNames(styles['formcard'])}>
             <div className="row">
-                <div className="welcome col-sm-6">
+                <div className={classNames(styles['welcome'], 'col-sm-6 p-3')}>
                     <h1>Welcome!</h1>
                     <p>{message.welcomeMessage}</p>
                     <p>{message.btnMessage}</p>
-                    <a className="animated-button" href={message.redirect}>{message.btnText}</a>
+                    <a className={classNames(styles['animated-button'])} href={message.redirect}>{message.btnText}</a>
                 </div>
-                <div className="form-content col-sm-6">
-                    <div className="form-title">
-                        <h3 className="typing-title text-primary">{message.formTitle}</h3>
+                <div className={classNames(styles['form-content'], 'col-sm-6')}>
+                    <div className={classNames(styles['form-title'])}>
+                        <h3 className={classNames(styles['typing-title'], 'text-primary')}>{message.formTitle}</h3>
                     </div>
                     
                     <Form onSubmit={onSubmit}>

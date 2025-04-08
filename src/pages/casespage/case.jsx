@@ -10,6 +10,7 @@ const Case = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const selectedCase = useSelector((state) => state.cases.selectedItem);
+    const loading = useSelector((state) => state.cases.loading);
     console.log("id: " + id)
     console.log("case: " + selectedCase)
 
@@ -19,7 +20,7 @@ const Case = () => {
         }
     }, [id, dispatch]) 
     
-    if(!selectedCase) {
+    if(loading) {
         return (
             <div className="container mt-5 mb-5">
                 <h5 className="text-info">Loading...</h5>
