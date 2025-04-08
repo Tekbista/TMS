@@ -6,7 +6,7 @@ export const fetchCases = createAsyncThunk(
     "cases/fetchCases",
     async(_, {rejectedWithValue}) =>{
         try{
-            const response = await fetch("cases.json");
+            const response = await fetch("http://localhost:8000/cases");
             if(!response.ok){
                 return new Error("Couldn't fetch cases");
             }
@@ -17,16 +17,28 @@ export const fetchCases = createAsyncThunk(
     }
 );
 
-export const getCaseById = (state, caseId) =>{
-    return state.cases.items.find((item) => item.id === caseId);
-}
+export const fetchCaseById = createAsyncThunk(
+    "cases/fetchCaseById",
+    async(id, {rejectedWithValue}) =>{
+        try{
+            const response = await fetch(`http://localhost:8000/cases/${id}`);
+            if(!response.ok){
+                return new Error("Couldn't fetch case");
+            }
+            return response.json();
+        }catch(error){
+            return rejectedWithValue(error.message)
+        }
+    }
+)
 
 const casesSlice = createSlice({
     name: "cases",
     initialState: {
         items: [],
         loading: false,
-        error: ""
+        error: "",
+        selectedItem: null,
     },
     reducers:{},
     extraReducers:(builder) =>{
@@ -42,8 +54,18 @@ const casesSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload
             })
+            .addCase(fetchCaseById.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(fetchCaseById.fulfilled, (state, action) =>{
+                state.loading = false;
+                state.selectedItem = action.payload
+            })
+            .addCase(fetchCaseById.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload
+            })
     }
 })
 
-export const {setLoading, setItems, getSelectedItem} = casesSlice.actions
 export default casesSlice.reducer

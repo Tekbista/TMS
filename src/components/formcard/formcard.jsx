@@ -1,12 +1,11 @@
 import { Form, FormControl, Button} from "react-bootstrap";
-
-
-import './formcard.css'
+import './formcard.module.css'
 
 function FormCard({inputs, onSubmit, onChange, values, errors, onBlur, message}){
 
     return(
         <div className="container mt-5 container d-flex justify-content-center align-items-center">
+            <div className="formcard">
             <div className="row">
                 <div className="welcome col-sm-6">
                     <h1>Welcome!</h1>
@@ -34,7 +33,7 @@ function FormCard({inputs, onSubmit, onChange, values, errors, onBlur, message})
                     </Form> 
                 </div>
             </div>
-            
+            </div>
         </div>          
     )    
 }

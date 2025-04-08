@@ -1,7 +1,6 @@
 
 import NavigationBar from "../../components/navbar/navbar";
 import FormCard from "../../components/formcard/formcard";
-import './loginpage.css'
 import useForm from "../../hooks/useForm";
 
 function LoginPage(){

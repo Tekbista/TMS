@@ -7,7 +7,9 @@ import { fetchCases} from "../../redux/caseslice"
 
 const CasesPage = () => {
     const navigate = useNavigate();
-    const {loading, items, selectedItem, error} = useSelector((state) => state.cases);
+    const loading  = useSelector((state) => state.cases.loading);
+    const error = useSelector((state) => state.cases.error);
+    const items = useSelector((state) => state.cases.items);
     const dispatch = useDispatch();
 
     useEffect(() => {
