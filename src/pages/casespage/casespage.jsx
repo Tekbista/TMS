@@ -20,7 +20,9 @@ const CasesPage = () => {
     return(
         <div>
             <NavigationBar/>
+            
             <div className="container mt-5 mb-5">
+                <button className="btn btn-primary mb-3 float-end" onClick={() => navigate("/cases/new")}>Create New Case</button>
                 {loading && <p>loading...</p>}
                 {error && <p>{error}</p>}
                 {!loading && 

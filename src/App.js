@@ -9,7 +9,7 @@ import NotFound from "./pages/notfoundpage/notfound";
 import Case from "./pages/casespage/case";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-
+import NewCase from "./pages/casespage/newcase";
 
 
 
@@ -23,6 +23,7 @@ function App() {
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/cases" element={<CasesPage/>}/>
           <Route path="/cases/:id" element={<Case/>}/>
+          <Route path="/cases/new" element={<NewCase/>}/>
           <Route path="/mylists" element={<LoginPage/>}/>
           <Route path="/notification" element={<LoginPage/>}/>
           <Route path="/logout" element={<LoginPage/>}/>
