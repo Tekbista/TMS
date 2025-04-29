@@ -2,10 +2,17 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import './navbar.css'
 import { useSelector, useDispatch } from "react-redux";
 import {login, logout} from '../../redux/userslice'
+import { useNavigate } from "react-router-dom";
+import { use } from "react";
 
 function NavigationBar(){
     const isloggedin = useSelector((state) => state.user.value)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate('/login');
+    };
     
     return(
         <Navbar bg="primary" variant="dark" sticky="top">
@@ -51,7 +58,7 @@ function NavigationBar(){
                     {
                         isloggedin && 
                         <Nav.Item>
-                            <Nav.Link onClick={() => dispatch(logout())}>Logout</Nav.Link>
+                            <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                         </Nav.Item>
                     }
                 </Nav>

@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { use } from "react";
+
 
 const initialState = {value: true} 
 
@@ -10,10 +12,12 @@ const userSlice = createSlice({
             state.value = true
         },
         logout: (state) =>{
-            state.value = false
+            state.value = false;
+            
         }
     }
 })
+
 
 export const {login, logout} = userSlice.actions;
 export default userSlice.reducer;

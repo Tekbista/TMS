@@ -26,7 +26,6 @@ function App() {
           <Route path="/cases/new" element={<NewCase/>}/>
           <Route path="/mylists" element={<LoginPage/>}/>
           <Route path="/notification" element={<LoginPage/>}/>
-          <Route path="/logout" element={<LoginPage/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
