@@ -11,8 +11,6 @@ const Case = () => {
     const dispatch = useDispatch();
     const selectedCase = useSelector((state) => state.cases.selectedItem);
     const loading = useSelector((state) => state.cases.loading);
-    console.log("id: " + id)
-    console.log("case: " + selectedCase)
 
     useEffect(() => {
         if (id) {
@@ -34,10 +32,10 @@ const Case = () => {
             <div className="container mt-5 mb-5">
                 <h5 className="text-info">{selectedCase.title}</h5>
                 <div className="row">
-                    <div className="col-sm-7 rounded border border-1 border-primary p-3 me-3">
+                    <div className="col-sm-7 rounded border shadow border-1 border-light p-3 me-3">
                         <p>{selectedCase.description}</p>
                     </div>
-                    <div className="col-sm-4 rounded border border-1 border-primary p-3">
+                    <div className="col-sm-4 rounded border shadow border-1 border-light p-3">
                         <p>Case Number: {selectedCase.id}</p>
                         <p>Title: {selectedCase.title}</p>
                         <p>Created: {selectedCase.created}</p>

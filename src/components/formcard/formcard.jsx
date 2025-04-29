@@ -6,10 +6,10 @@ function FormCard({inputs, onSubmit, onChange, values, errors, onBlur, message})
 
     return(
         <div className={classNames(styles['container'], 'mt-5 container d-flex justify-content-center align-items-center')} >
-            <div className={classNames(styles['formcard'])}>
+            <div className={classNames(styles['formcard'], 'shadow-lg')}>
             <div className="row">
                 <div className={classNames(styles['welcome'], 'col-sm-6 p-3')}>
-                    <h1>Welcome!</h1>
+                    <h1 className={classNames(styles['linear-gradient'])}>Welcome!</h1>
                     <p>{message.welcomeMessage}</p>
                     <p>{message.btnMessage}</p>
                     <a className={classNames(styles['animated-button'])} href={message.redirect}>{message.btnText}</a>

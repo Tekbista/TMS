@@ -37,7 +37,6 @@ const CasesPage = () => {
                             <th>Status</th>
                             <th>Created</th>
                             <th>Updated</th>
-                            <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +50,6 @@ const CasesPage = () => {
                             <td>{cs.status}</td>
                             <td>{cs.created}</td>
                             <td>{cs.updated}</td>
-                            <td>{cs.description}</td>
                         </tr>
                         ))}
                     </tbody>
